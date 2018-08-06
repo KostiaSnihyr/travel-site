@@ -37,18 +37,13 @@ class StickyHeader {
 
     createPageSectionWaypoints() {
         var that = this;
-        console.log(this);
         this.pageSections.each(function() {
-            console.log(this);
             var currentPageSection = this;
             new Waypoint({
                 element: currentPageSection,
                 handler: function(direction) {
                     if (direction == "down") {
                         var matchingHeaderlink = currentPageSection.getAttribute("data-matching-link");
-                        console.log(currentPageSection);
-                        console.log(matchingHeaderlink);
-                        console.log(this);
                         that.headerLinks.removeClass("is-current-link");
                         $(matchingHeaderlink).addClass("is-current-link");
                     }
@@ -61,9 +56,6 @@ class StickyHeader {
                 handler: function(direction) {
                     if (direction == "up") {
                         var matchingHeaderlink = currentPageSection.getAttribute("data-matching-link");
-                        console.log(currentPageSection);
-                        console.log(matchingHeaderlink);
-                        console.log(this);
                         that.headerLinks.removeClass("is-current-link");
                         $(matchingHeaderlink).addClass("is-current-link");
                     }
